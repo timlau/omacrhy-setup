@@ -9,3 +9,5 @@ echo " -> Installing stow"
 ./install-stow.sh
 echo " -> Installing Brave browser"
 ./install-brave.sh
+echo ' -> Installing yazi'
+./install-yazi.sh
