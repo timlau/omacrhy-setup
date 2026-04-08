@@ -2,3 +2,11 @@
 
 omarchy-pkg-add bitwarden
 
+if grep -Fq "export SSH_AUTH_SOCK=" "$HOME/.bashrc"; then
+  echo ".bashrc is already configured for bitwarden as ssh agent"
+else
+  echo "" >>$HOME/.bashrc
+  echo "# use bitwarden as ssh agent" >>$HOME/.bashrc
+  echo "export SSH_AUTH_SOCK=$HOME/.bitwarden-ssh-agent.sock" >>$HOME/.bashrc
+  echo "" >>$HOME/.bashrc
+fi
