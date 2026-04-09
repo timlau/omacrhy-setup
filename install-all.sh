@@ -11,3 +11,5 @@ echo " -> Installing Brave browser"
 ./install-brave.sh
 echo ' -> Installing yazi'
 ./install-yazi.sh
+echo ' -> Installing ghostty'
+./install-ghostty.sh
