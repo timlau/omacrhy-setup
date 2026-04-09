@@ -7,6 +7,8 @@ echo " -> Installing Bitwarden"
 ./install-bitwarden.sh
 echo " -> Installing fish shell"
 ./install-fish.sh
+echo " -> Installing dotfiles"
+./install-dotfiles.sh
 echo " -> Installing Brave browser"
 ./install-brave.sh
 echo ' -> Installing yazi'
