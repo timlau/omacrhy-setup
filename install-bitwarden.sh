@@ -7,12 +7,12 @@ is_fish_installed() {
 }
 
 if is_fish_installed; then
-  echo "setup for fish shell"
+  echo "    Setup for fish shell"
   fish -c "set -Ux SSH_AUTH_SOCK $HOME/.bitwarden-ssh-agent.sock"
 fi
 
 if grep -Fq "export SSH_AUTH_SOCK=" "$HOME/.bashrc"; then
-  echo ".bashrc is already configured for bitwarden as ssh agent"
+  echo "    .bashrc is already configured for bitwarden as ssh agent"
 else
   echo "" >>$HOME/.bashrc
   echo "# use bitwarden as ssh agent" >>$HOME/.bashrc
