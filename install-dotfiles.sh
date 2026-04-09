@@ -31,6 +31,8 @@ if [ $? -eq 0 ]; then
   stow -R -v starship
   stow -R -v zed
   stow -R -v mpv
+  stow -R -v yazi
+  stow -R -v ghostty
 else
   echo "Failed to clone the repository."
   exit 1
