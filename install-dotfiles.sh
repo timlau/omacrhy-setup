@@ -31,7 +31,7 @@ fi
 # Check if the clone was successful
 if [ $? -eq 0 ]; then
   echo "    Removing old configs"
-  rm -rf ~/.config/starship.toml ~/.config/zed
+  rm -rf ~/.config/starship.toml ~/.config/zed ~/.config/yazi/theme.toml
   cd "$REPO_NAME"
   git pull -q
   make stow
