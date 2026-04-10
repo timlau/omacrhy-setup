@@ -2,9 +2,11 @@
 
 # install misc packages with no special setup
 
-pkgs=("make" "stow")
+# Read packages from data/packages file
+while IFS= read -r pkg; do
+  # Skip empty lines and comments
+  [[ -z "$pkg" || "$pkg" =~ ^# ]] && continue
 
-for pkg in "${pkgs[@]}"; do
   echo "    Installing : $pkg"
   omarchy-pkg-add $pkg
-done
+done < "$(dirname "$0")/data/packages"
