@@ -15,3 +15,5 @@ echo '==> Installing ghostty'
 ./install-ghostty.sh
 echo "==> Installing dotfiles"
 ./install-dotfiles.sh
+
+omarchy-show-done
