@@ -12,9 +12,6 @@ else
   echo "omarchy-pkg-add $pkg" >> $script
   chmod +x $script
   git add $script
-  echo "echo ' -> Installing $pkg'" >> install-all.sh
+  echo "echo '  -> Installing $pkg'" >> install-all.sh
   echo "./$script" >> install-all.sh
 fi
-
-
-

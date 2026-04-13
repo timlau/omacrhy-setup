@@ -10,12 +10,12 @@ is_installed() {
 }
 
 if ! is_installed "stow"; then
-  echo "Install stow first"
+  echo "    -> Install stow first"
   exit 1
 fi
 
 if ! is_installed "make"; then
-  echo "Install make first"
+  echo "    -> Install make first"
   exit 1
 fi
 
@@ -23,19 +23,27 @@ cd ~
 
 # Check if the repository already exists
 if [ -d "$REPO_NAME" ]; then
-  echo "    Repository '$REPO_NAME' already exists. Skipping clone"
+  echo "    -> Repository '$REPO_NAME' already exists. Skipping clone"
 else
   git clone "$REPO_URL" "$REPO_NAME"
 fi
 
 # Check if the clone was successful
 if [ $? -eq 0 ]; then
-  echo "    Removing old configs"
+  echo "    -> Removing old configs"
   rm -rf ~/.config/starship.toml ~/.config/zed ~/.config/ghostty/config ~/.config/yazi/theme.toml
   cd "$REPO_NAME"
-  git pull -q
+  git pull -q &>/dev/null
   make stow
 else
-  echo "    Failed to clone the repository."
+  echo "    -> Failed to clone the repository."
   exit 1
+fi
+
+# Add custom hypr contig to hyprland.conf
+HYPR_CONFIG="$HOME/.config/hypr/hyprland.conf"
+if grep -Fq "tla-hypr.conf" "$HYPR_CONFIG"; then
+  echo "    -> tla-hypr.conf is already sourced in $HYPR_CONFIG"
+else
+  echo  "source = ~/.config/hypr/tla-hypr.conf" >> $HYPR_CONFIG
 fi

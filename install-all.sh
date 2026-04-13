@@ -1,18 +1,17 @@
 #!/bin/bash
 
 # Install extra application
-echo ' -> Installing misc packages'
+echo '==> Installing misc packages'
 ./install-misc.sh
-echo " -> Installing Bitwarden"
+echo "==> Installing Bitwarden"
 ./install-bitwarden.sh
-echo " -> Installing fish shell"
+echo "==> Installing fish shell"
 ./install-fish.sh
-echo " -> Installing Brave browser"
+echo "==> Installing Brave browser"
 ./install-brave.sh
-echo ' -> Installing yazi'
+echo '==> Installing yazi'
 ./install-yazi.sh
-echo ' -> Installing ghostty'
+echo '==> Installing ghostty'
 ./install-ghostty.sh
-echo " -> Installing dotfiles"
+echo "==> Installing dotfiles"
 ./install-dotfiles.sh
-
