@@ -9,7 +9,7 @@ plugins=(
 omarchy-pkg-add yazi
 
 # Install theme
-if [[ ! -f ~/.config/yazi/flavors/$theme.yazi/flavor.toml ]]; then
+if [[ ! -d ~/.config/yazi/flavors/$theme.yazi ]]; then
   echo "    -> installing $theme yazi theme "
   ya pkg add $theme_git &>/dev/null
 fi
