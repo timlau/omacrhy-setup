@@ -30,8 +30,8 @@ fi
 
 # Check if the clone was successful
 if [ $? -eq 0 ]; then
-  echo "    -> Removing old configs"
-  rm -rf ~/.config/starship.toml ~/.config/zed ~/.config/ghostty/config ~/.config/yazi/theme.toml
+  # echo "    -> Removing old configs"
+  # rm -rf ~/.config/starship.toml ~/.config/zed ~/.config/ghostty/config ~/.config/yazi/theme.toml
   cd "$REPO_NAME"
   git pull -q &>/dev/null
   make stow
@@ -45,5 +45,5 @@ HYPR_CONFIG="$HOME/.config/hypr/hyprland.conf"
 if grep -Fq "tla-hypr.conf" "$HYPR_CONFIG"; then
   echo "    -> tla-hypr.conf is already sourced in $HYPR_CONFIG"
 else
-  echo  "source = ~/.config/hypr/tla-hypr.conf" >> $HYPR_CONFIG
+  echo "source = ~/.config/hypr/tla-hypr.conf" >>$HYPR_CONFIG
 fi
