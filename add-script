@@ -2,7 +2,7 @@
 
 pkg=$1
 
-script=install-$pkg.sh
+script=scripts/00-$pkg.sh
 
 if [[ -f $script ]]; then
   echo "$script does already exists"
@@ -12,6 +12,4 @@ else
   echo "omarchy-pkg-add $pkg" >> $script
   chmod +x $script
   git add $script
-  echo "echo '  -> Installing $pkg'" >> install-all.sh
-  echo "./$script" >> install-all.sh
 fi

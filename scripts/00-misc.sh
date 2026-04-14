@@ -9,4 +9,4 @@ while IFS= read -r pkg; do
 
   echo "    -> Installing : $pkg"
   omarchy-pkg-add $pkg
-done < "$(dirname "$0")/data/packages"
+done < "$(dirname "$0")/../data/packages"

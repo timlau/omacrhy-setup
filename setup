@@ -1,0 +1,6 @@
+#!/bin/bash
+for script in scripts/*; do
+  name=$(basename "$script" .sh)
+  echo "==> Setup : ${name#*-}"
+  $script
+done
