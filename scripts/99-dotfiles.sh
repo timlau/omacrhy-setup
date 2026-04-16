@@ -3,6 +3,7 @@
 ORIGINAL_DIR=$(pwd)
 REPO_URL="git@github.com:timlau/dotfiles_omarchy.git"
 REPO_NAME="dotfiles"
+HYPR_CONFIG="$HOME/.config/hypr/hyprland.conf"
 
 is_installed() {
   pkg=$1
@@ -41,7 +42,6 @@ else
 fi
 
 # Add custom hypr contig to hyprland.conf
-HYPR_CONFIG="$HOME/.config/hypr/hyprland.conf"
 if grep -Fq "tla-hypr.conf" "$HYPR_CONFIG"; then
   echo "    -> tla-hypr.conf is already sourced in $HYPR_CONFIG"
 else

@@ -1,4 +1,6 @@
 #!/bin/bash
+
+# Run all setup scripts in the scripts folders
 for script in scripts/*; do
   name=$(basename "$script" .sh)
   echo "==> Setup : ${name#*-}"
