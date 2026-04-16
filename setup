@@ -1,5 +1,6 @@
 #!/bin/bash
 
+gum style --border normal --border-foreground 6 --padding "1 2" "Omarcy Personal Post Setup Scripts"
 # Run all setup scripts in the scripts folders
 for script in scripts/*; do
   name=$(basename "$script" .sh)
