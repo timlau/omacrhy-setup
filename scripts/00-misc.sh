@@ -6,7 +6,8 @@
 while IFS= read -r pkg; do
   # Skip empty lines and comments
   [[ -z "$pkg" || "$pkg" =~ ^# ]] && continue
-
-  echo "    -> Installing : $pkg"
-  omarchy-pkg-add $pkg
+  if omarchy-pkg-missing $pkg; then
+    echo "    -> Installing : $pkg"
+    omarchy-pkg-add $pkg
+  fi
 done < "$(dirname "$0")/../data/packages"

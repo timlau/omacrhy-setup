@@ -6,7 +6,8 @@
 while IFS= read -r pkg; do
   # Skip empty lines and comments
   [[ -z "$pkg" || "$pkg" =~ ^# ]] && continue
-
-  echo "    -> Removing : $pkg"
-  omarchy-pkg-drop $pkg
+  if omarchy-pkg-present $pkg; then
+    echo "    -> Removing : $pkg"
+    omarchy-pkg-drop $pkg
+  fi
 done < "$(dirname "$0")/../data/to_remove"
