@@ -4,7 +4,6 @@ env_file=$HOME/.config/uwsm/env
 packages=("bitwarden" "bitwarden-cli")
 use_bitwarden_as_ssh_agent=false
 
-echo ${packages[@]}
 if omarchy-pkg-missing "${packages[@]}"; then
   echo "Installing Bitwarden..."
   omarchy-pkg-add "${packages[@]}"
